@@ -12,6 +12,13 @@ Develop a full-stack web application that indexes the "EpiRecipes" dataset into 
 ## Project Overview
 You are tasked with creating a comprehensive recipe search platform that allows users to efficiently search and filter through a vast collection of recipes. The application should mimic the user experience of leading e-commerce platforms like Flipkart or Amazon, ensuring intuitive navigation and responsive design.
 
+## Tech Stack
+
+**Client:** React, Redux, TailwindCSS
+
+**Server:** Node, Express
+
+
 ## Technical Requirements
 1. Data Indexing with OpenSearch
 
@@ -59,26 +66,10 @@ You are tasked with creating a comprehensive recipe search platform that allows 
 #### Get all items
 
 ```http
-  GET /api/items
+  http://localhosts:9200/api/recipes
 ```
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `api_key` | `string` | **Required**. Your API key |
 
-#### Get item
-
-```http
-  GET /api/items/${id}
-```
-
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Required**. Id of item to fetch |
-
-#### add(num1, num2)
-
-Takes two numbers and returns the sum.
 
 ## API Endpoints
 
@@ -138,26 +129,8 @@ The following API endpoints are available for interacting with the EpiRecipes Se
     }
     ```
 
-### 3. Get Recipe by ID
 
-- **Endpoint**: `GET /api/recipes/:id`
-- **Description**: Retrieves a specific recipe by its ID.
-- **Path Parameters**:
-  - `id` (string, required): The ID of the recipe to retrieve.
-- **Response**:
-  - **Success (200)**: Returns the recipe details.
-  - **Example**:
-    ```json
-    {
-      "id": "1",
-      "title": "Spaghetti Carbonara",
-      "ingredients": ["spaghetti", "eggs", "cheese", "bacon"],
-      "cuisine": "Italian",
-      "instructions": "Cook spaghetti, mix with eggs and cheese, add bacon."
-    }
-    ```
-
-### 4. Pagination
+### 3. Pagination
 
 - **Endpoint**: `GET /api/recipes`
 - **Description**: Retrieves a paginated list of recipes.
@@ -180,34 +153,62 @@ The following API endpoints are available for interacting with the EpiRecipes Se
 
 - Ensure that your backend is running before testing these endpoints.
 - For any authentication or specific headers required, please refer to the backend documentation or code comments.
+## Project Setup
+
+### Prerequisites
+Before you begin, ensure you have met the following requirements:
+
+- **Node.js**: Install Node.js from [nodejs.org](https://nodejs.org/).
+- **OpenSearch**: Install OpenSearch following the instructions from the [OpenSearch documentation](https://opensearch.org/docs/latest/install-and-configure/install-opensearch/).
+- **Git**: Ensure Git is installed on your machine. You can download it from [git-scm.com](https://git-scm.com/).
+
+### Cloning the Repository
+1. Clone the repository to your local machine:
+   ```bash
+   git clone https://github.com/Roushankumarr/Erecipe.git
+   cd Erecipe
 
 
-## Tech Stack
+2. Setting Up the Backend:
+  ```bash
+  1.Navigate to the backend folder:
+  
+  cd Server
 
-**Client:** React, Redux, TailwindCSS
+  2.Install the necessary dependencies:
+  
+   npm install
 
-**Server:** Node, Express
+  3. Set up the environment variables: Create a .env file in the Server directory and add your environment variables. An example is provided below:
 
+  PORT=5000
 
-## Usage/Examples
+   OPENSEARCH_HOST=http://localhost:9200
 
-```javascript
-import Component from 'my-project'
-
-function App() {
-  return <Component />
-}
-```
-
-
-## Screenshots
-
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+3. Setting Up the Frontend:
+   ```bash
+    
+   1.Navigate to the Frontend Folder:
 
 
-## Roadmap
 
-- Additional browser support
+     cd Frontend
+   2.Install Dependencies: Install the required packages using npm:
 
-- Add more integrations
+      npm install
+  3. Start the Development Server: Launch the frontend application:
 
+      npm start
+   4. This will start the application on http://localhost:3000.
+
+
+      
+   
+
+
+
+   
+ 
+
+
+        
